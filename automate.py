@@ -29,7 +29,7 @@ chrome_driver.find_element(By.NAME,"inlineRadio2").click();
 time.sleep(5)
 chrome_driver.find_element(By.NAME,"bday").send_keys("23-12-1999")
 chrome_driver.find_element(By.CLASS_NAME,"btn btn-success").click()
-time.sleep(12)
+time.sleep(6)
 
 
 #printing title
