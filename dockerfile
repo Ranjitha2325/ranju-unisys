@@ -1,3 +1,4 @@
-From nginx
-#we are doing nginx image from docker hub
-COPY ranj.html /usr/share/nginx/html/index.html
+# building docker image
+docker build -t ranjuwb:testv1  . 
+# checking image
+docker images | grep -i ranjuweb
