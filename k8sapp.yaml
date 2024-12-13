@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: ashu-ui
-  name: ashu-ui
+    app: ranju-ui
+  name: ranju-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ashu-ui
+      app: ranju-ui
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: ashu-ui
+        app: ranju-ui
     spec:
       containers:
       - image: adminer
