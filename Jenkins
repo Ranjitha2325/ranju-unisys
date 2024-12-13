@@ -8,7 +8,7 @@ pipeline {
                 sh 'java --version'
                 sh 'python3 -V'
                 sh 'docker version'
-                git branch: 'master' , url: 'https://github.com/redashu/ashu-unisys-cicd.git'
+                git branch: 'main' , url: 'https://github.com/Ranjitha2325/ranju-unisys.git'
                 sh 'ls'
             }
         }
@@ -17,8 +17,8 @@ pipeline {
             steps {
                 echo 'building docker image for selenium code'
                 sh 'ls'
-                sh 'docker build -t  ashuselenium:test2 . '
-                sh 'docker images | grep -i ashuselenium'
+                sh 'docker build -t  ranjuweb:test2 . '
+                sh 'docker images | grep -i ranjuweb'
             }
         }
         // selenium prerequiste
@@ -32,6 +32,15 @@ pipeline {
                 sh 'which chromedriver'
             }
  
+        }
+        // doing SAST in selenium python code
+        stage('using trivy scan in current code'){
+            steps {
+                echo 'checking trivy version'
+                sh 'trivy -version'
+                echo 'scanning the python code'
+                sh 'trivy fs  .'
+            }
         }
         // running python selenium in headless mode
         stage('running selenium in headless mode'){
